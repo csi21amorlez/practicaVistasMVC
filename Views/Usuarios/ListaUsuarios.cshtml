@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ListaUsuarios";
+}
+
+<h2>ListaUsuarios</h2>
+
+
+@foreach(string usu in Model)
+{
+    <ul>
+        <li>@usu</li>
+    </ul>
+}
+
+@Html.ActionLink("Regresar al index","Index")
+

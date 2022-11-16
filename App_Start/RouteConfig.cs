@@ -16,7 +16,7 @@ namespace ejemploMVC_vistas
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Usuarios", id = UrlParameter.Optional }
+                defaults: new { controller = "Index", action = "Usuarios", id = UrlParameter.Optional }
             );
         }
     }

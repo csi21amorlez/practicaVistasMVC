@@ -25,7 +25,26 @@ namespace ejemploMVC_vistas.Controllers
             listUsuarios.Add("Roman");
             listUsuarios.Add("Ricardo");
 
+            //ViewBag.ListaUsuarios = listaUsuarios
+            //TempData["ListaUsuarios"] = listUsuarios         
+            Session["ListaUsuarios"] = listUsuarios;
+            //ViewData["ListaUsuarios"] = listUsuarios; Para evitar el fallo vamos a usar session
+
+
+
             return View(listUsuarios);
+
+        }
+
+        [HttpPost]
+        public ActionResult ListaUsuarios(string selUsuarios)
+        {
+            ViewBag.Usuarios = selUsuarios;
+            //List<string> listaUsuarios = ViewBag.ListaUsuarios;
+            //List<string> listaUsuarios = (List<string>)TempData["ListaUsuarios"];
+            List<string> listaUsuarios = (List<string>)Session["ListaUsuarios"];
+            //List<string> listaUsuarios = (List<string>)ViewData["ListaUsuarios"];
+            return View(listaUsuarios);
 
         }
     }
